@@ -34,7 +34,7 @@ class CoffeeDetailsActivity : AppCompatActivity() {
 
         coffeeTitle.text = details?.title
         coffeeDesc.text = details?.description
-        if (details != null) {
+        if (details != null && details.image.isNotEmpty()) {
             Picasso.get().load(details.image).into(coffeeImage)
         }
 

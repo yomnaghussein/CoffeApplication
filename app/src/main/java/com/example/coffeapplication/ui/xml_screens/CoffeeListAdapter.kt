@@ -43,7 +43,8 @@ class CoffeeListAdapter(
             coffeeItemContainer.setOnClickListener { onClick.invoke(adapterPosition) }
             coffeeTitle.text = coffeeItem.title
             coffeeDesc.text = coffeeItem.description
-            Picasso.get().load(coffeeItem.image).into(coffeeImage)
+            if (coffeeItem.image.isNotEmpty())
+                Picasso.get().load(coffeeItem.image).into(coffeeImage)
         }
     }
 }
